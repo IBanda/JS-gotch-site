@@ -6,8 +6,9 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "format": "prettier \"src/**/*.{js,html}\" --write",
-        "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
+        "lint": "eslint . ",
+        "lint:fix": "eslint --fix",
+        "format": "prettier --write \"**/*.+(js)\""
     },
     "dependencies": {
         "@tryghost/content-api": "^1.4.1",
