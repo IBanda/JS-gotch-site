@@ -1,15 +1,34 @@
 {
-  "name": "jsgotchas",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "9.3.5",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
-  }
+    "name": "jsgotcha",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "format": "prettier \"src/**/*.{js,html}\" --write",
+        "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
+    },
+    "dependencies": {
+        "@tryghost/content-api": "^1.4.1",
+        "bootstrap": "^4.4.1",
+        "js-cookie": "^2.2.1",
+        "moment": "^2.24.0",
+        "next": "9.3.5",
+        "nprogress": "^0.2.0",
+        "prop-types": "^15.7.2",
+        "react": "16.13.1",
+        "react-bootstrap": "^1.0.1",
+        "react-dom": "16.13.1"
+    },
+    "devDependencies": {
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-react": "^7.19.0",
+        "eslint-plugin-react-hooks": "^3.0.0",
+        "husky": "^4.2.5",
+        "prettier": "^2.0.5"
+    }
 }
