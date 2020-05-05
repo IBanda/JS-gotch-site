@@ -67,7 +67,6 @@ const Layout = ({ themeHandler, children }) => {
           line-height: 1.25;
           letter-spacing: 1px;
           color: ${theme.paragraph};
-          background-color: ${theme.background};
           transition: background-color 0.5s linear;
           position: relative;
         }

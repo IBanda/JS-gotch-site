@@ -4,28 +4,26 @@ import propTypes from 'prop-types';
 import Layout from './Layout';
 
 const ThemeWrapper = ({ children }) => {
-  const [theme, setTheme] = useState('ligth');
+  const [theme, setTheme] = useState('light');
   useEffect(() => {
     if (!localStorage.getItem('theme')) {
       localStorage.setItem('theme', theme);
       return;
     }
-
+    document.body.style.backgroundColor =
+      theme === 'light' ? '#fff' : '#222831';
     setTheme(localStorage.getItem('theme'));
   }, [setTheme, theme]);
+
   const onThemeHandler = () => {
     setTheme((prevState) => {
       const newState = prevState === 'light' ? 'dark' : 'light';
-
       localStorage.setItem('theme', newState);
-      localStorage;
       return newState;
     });
   };
   return (
-    <ThemeContext.Provider
-      value={theme === 'light' ? themes.light : themes.dark}
-    >
+    <ThemeContext.Provider value={themes[theme]}>
       <Layout themeHandler={onThemeHandler}>{children}</Layout>
     </ThemeContext.Provider>
   );

@@ -11,7 +11,7 @@ const IntroWrapper = () => {
               <a className="myName">Ian Banda</a>
             </Link>
           </p>
-          <p>JavaScript Gotchas, Deep Dives and some of my new Discoveries </p>
+          <p>JavaScript JavaScript JavaScript!!</p>
         </div>
       </div>
       <style jsx>
@@ -36,6 +36,7 @@ const IntroWrapper = () => {
             text-decoration: none;
             display: inline-block;
             border-bottom: 2px solid #f7e032;
+            padding-bottom: 0;
           }
         `}
       </style>

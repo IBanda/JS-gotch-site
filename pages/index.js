@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Layout,
-  Post,
-  IntroWrapper,
-  ThemeWrapper,
-} from '../components/Components';
+import { Post, IntroWrapper, ThemeWrapper } from '../components/Components';
 import { getPosts } from './api/posts';
 import { Row } from 'react-bootstrap';
 import propTypes from 'prop-types';

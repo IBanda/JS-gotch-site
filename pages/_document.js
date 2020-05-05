@@ -12,6 +12,7 @@ export default class extends Document {
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
           />
+
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -27,6 +28,18 @@ export default class extends Document {
           />
         </Head>
         <body>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            (function() { try {
+          var mode = localStorage.getItem('theme');
+          if (!mode) return
+          mode=mode === "light"?"#fff":"#222831"
+          document.body.style.backgroundColor=mode;
+      } catch (e) {} })();
+            `,
+            }}
+          />
           <Main />
           <NextScript />
         </body>

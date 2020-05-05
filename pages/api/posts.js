@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import GhostContentAPI from '@tryghost/content-api';
 
 const api = new GhostContentAPI({
