@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
+import { Arrow } from './svg';
 import propTypes from 'prop-types';
-import ThemeContext from './ThemeContext';
+
 const PostNavigation = ({ posts, index }) => {
-  const color = useContext(ThemeContext);
   return (
     <div className="controllers">
       <Row>
@@ -17,11 +17,7 @@ const PostNavigation = ({ posts, index }) => {
               as={`/post/${posts && posts[index - 1].slug}`}
             >
               <a className="ctrl mr-2">
-                <img
-                  className="leftArrow pointer"
-                  src={`/images/right${color.variation}.svg`}
-                  alt="left_arrow"
-                />
+                <Arrow rotate="rotate" />
                 {posts[index - 1].title}
               </a>
             </Link>
@@ -34,11 +30,7 @@ const PostNavigation = ({ posts, index }) => {
             <Link href="/post/[slug]" as={`/post/${posts[index + 1].slug}`}>
               <a className="ctrl ml-2">
                 {posts[index + 1].title}
-                <img
-                  className="pointer"
-                  src={`/images/right${color.variation}.svg`}
-                  alt="right_arrow"
-                />
+                <Arrow />
               </a>
             </Link>
           )}
@@ -47,16 +39,6 @@ const PostNavigation = ({ posts, index }) => {
       <style jsx>{`
         .controllers {
           margin-bottom: 10%;
-        }
-        .pointer {
-          max-width: 15px;
-          width: 100%;
-          margin-left: 10px;
-        }
-        .leftArrow {
-          transform: rotate(180deg);
-          margin-left: 0;
-          margin-right: 10px;
         }
         .ctrl {
           font-size: 0.8rem;

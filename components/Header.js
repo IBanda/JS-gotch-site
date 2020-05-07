@@ -5,7 +5,7 @@ import Router from 'next/router';
 import { Progress, progressMethods } from './Progress';
 import ThemeContext from './ThemeContext';
 import propTypes from 'prop-types';
-
+import { GitHub, Facebook, Twitter } from './svg';
 Router.events.on('routeChangeStart', () => progressMethods.start());
 Router.events.on('routeChangeComplete', () => progressMethods.done());
 Router.events.on('routeChangeError', () => progressMethods.done());
@@ -30,11 +30,7 @@ const Header = ({ onThemeHandler }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  className="icon"
-                  src={`/images/github${color.variation}.svg`}
-                  alt="github"
-                />
+                <GitHub />
               </a>
 
               <a
@@ -42,11 +38,7 @@ const Header = ({ onThemeHandler }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  className="icon"
-                  src={`/images/facebook${color.variation}.svg`}
-                  alt="facebook"
-                />
+                <Facebook />
               </a>
 
               <a
@@ -54,11 +46,7 @@ const Header = ({ onThemeHandler }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  className="icon"
-                  src={`/images/twitter${color.variation}.svg`}
-                  alt="twitter"
-                />
+                <Twitter />
               </a>
             </Col>
             <Col md={6} sm={6} xs={6}>
@@ -95,11 +83,7 @@ const Header = ({ onThemeHandler }) => {
           padding: 0.3125em;
           width: 100%;
         }
-        .icon {
-          max-width: 15px;
-          width: 100%;
-          margin-right: 10px;
-        }
+
         .logoWrapper {
           margin-top: 5%;
           display: flex;

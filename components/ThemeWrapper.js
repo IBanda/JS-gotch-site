@@ -10,8 +10,7 @@ const ThemeWrapper = ({ children }) => {
       localStorage.setItem('theme', theme);
       return;
     }
-    document.body.style.backgroundColor =
-      theme === 'light' ? '#fff' : '#222831';
+    document.body.className = theme;
     setTheme(localStorage.getItem('theme'));
   }, [setTheme, theme]);
 

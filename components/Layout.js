@@ -1,11 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Header from './Header';
 import { Container } from 'react-bootstrap';
 import propTypes from 'prop-types';
-import ThemeContext from './ThemeContext';
 const Layout = ({ themeHandler, children }) => {
-  const theme = useContext(ThemeContext);
   return (
     <div>
       <Head>
@@ -66,24 +64,54 @@ const Layout = ({ themeHandler, children }) => {
           font-weight: 400;
           line-height: 1.25;
           letter-spacing: 1px;
-          color: ${theme.paragraph};
           transition: background-color 0.5s linear;
           position: relative;
         }
+        svg.icon,
+        svg.arrow {
+          width: 1em;
+          height: 1em;
+        }
+        svg.icon {
+          margin-right: 0.5em;
+        }
+        .dark p {
+          color: #fff;
+        }
+        .dark a {
+          color: #f7e032 !important;
+        }
+        .dark {
+          background-color: #222831;
+        }
+        .dark svg.icon {
+          fill: #f7e032;
+        }
+        .dark svg.arrow {
+          fill: #fff;
+        }
+        .light h1,
+        .light h2,
+        .light h3,
+        .light h4,
+        .light h5 {
+          font-family: gilroybold;
+          color: #000;
+        }
+        .dark h1,
+        .dark h2,
+        .dark h3,
+        .dark h4,
+        .dark h5 {
+          color: #f7e032;
+        }
 
         a {
-          color: ${theme.otherText} !important;
+          color: #000 !important;
           text-decoration: none;
           padding-bottom: 0.4em;
         }
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-          font-family: gilroybold;
-          color: ${theme.otherText};
-        }
+
         img {
           width: 100%;
         }

@@ -34,7 +34,7 @@ const Progress = () => {
           left: 0;
           top: 0;
           z-index: 1500;
-          width: 10%;
+          width: 20%;
           height: 2px;
           animation-name: progress;
           animation-duration: 4s;

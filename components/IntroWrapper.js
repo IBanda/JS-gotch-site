@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 const IntroWrapper = () => {
   return (
     <>
@@ -7,11 +6,11 @@ const IntroWrapper = () => {
         <div>
           <p className="intro">
             A personal blog by{' '}
-            <Link href="/#">
-              <a className="myName">Ian Banda</a>
-            </Link>
+            <a href="https://twitter.com/banda_ian" className="myName">
+              Ian Banda
+            </a>
           </p>
-          <p>JavaScript JavaScript JavaScript!!</p>
+          <p>I share what I learn</p>
         </div>
       </div>
       <style jsx>

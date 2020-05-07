@@ -34,8 +34,7 @@ export default class extends Document {
             (function() { try {
           var mode = localStorage.getItem('theme');
           if (!mode) return
-          mode=mode === "light"?"#fff":"#222831"
-          document.body.style.backgroundColor=mode;
+          document.body.className=mode
       } catch (e) {} })();
             `,
             }}
