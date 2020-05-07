@@ -5,19 +5,25 @@ import Layout from './Layout';
 
 const ThemeWrapper = ({ children }) => {
   const [theme, setTheme] = useState('light');
+
   useEffect(() => {
     if (!localStorage.getItem('theme')) {
       localStorage.setItem('theme', theme);
       return;
     }
-    document.body.className = theme;
-    setTheme(localStorage.getItem('theme'));
+    let latestTheme = localStorage.getItem('theme');
+    document.body.classList.remove(
+      `${latestTheme === 'light' ? 'dark' : 'light'}`
+    );
+    document.body.classList.add(latestTheme);
+    setTheme(latestTheme);
   }, [setTheme, theme]);
 
   const onThemeHandler = () => {
     setTheme((prevState) => {
       const newState = prevState === 'light' ? 'dark' : 'light';
       localStorage.setItem('theme', newState);
+
       return newState;
     });
   };

@@ -59,7 +59,7 @@ const Layout = ({ themeHandler, children }) => {
           font-style: normal;
         }
         body {
-          font-family: gilroymedium;
+          font-family: Verdana, Geneva, sans-serif;
           font-size: 1em;
           font-weight: 400;
           line-height: 1.25;
@@ -67,6 +67,28 @@ const Layout = ({ themeHandler, children }) => {
           transition: background-color 0.5s linear;
           position: relative;
         }
+        body.wf-active {
+          font-family: gilroymedium, Verdana, Geneva, sans-serif;
+        }
+        body.wf-active h1,
+        body.wf-active h2,
+        body.wf-active h3,
+        body.wf-active h4,
+        body.wf-active h5 {
+          font-family: gilroybold, Verdana, Geneva, sans-serif;
+        }
+        body.wf-inactive h1,
+        body.wf-inactive h2,
+        body.wf-inactive h3,
+        body.wf-inactive h4,
+        body.wf-inactive h5 {
+          font-family: Verdana, Geneva, sans-serif;
+        }
+
+        body.wf-inactive {
+          font-family: Verdana, Geneva, sans-serif;
+        }
+
         svg.icon,
         svg.arrow {
           width: 1em;

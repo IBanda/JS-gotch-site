@@ -13,6 +13,7 @@ const PostTime = ({ post, align = '' }) => {
           .time {
             font-size: 0.7rem;
             margin: 0;
+            max-width: 100%;
           }
           .readingTime {
             text-transform: uppercase;

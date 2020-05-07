@@ -26,6 +26,7 @@ export default class extends Document {
                         `,
             }}
           />
+          <script src="js/vendor/fontfaceobserver.js" />
         </Head>
         <body>
           <script
@@ -33,8 +34,25 @@ export default class extends Document {
               __html: `
             (function() { try {
           var mode = localStorage.getItem('theme');
-          if (!mode) return
-          document.body.className=mode
+          if (!mode) return;
+          document.body.className=mode;
+          document.body.className += " wf-inactive";
+                if(sessionStorage.foutFontsLoaded){
+                  document.body.classList.remove("wf-inactive");
+                  document.body.classList.add("wf-active");
+                  return
+                }
+
+                var normal = new FontFaceObserver('gilroymedium')
+                var bold= new FontFaceObserver('gilroybold')
+
+                Promise.all([normal.load(),bold.load()]).then(function(){
+                  document.body.classList.remove("wf-inactive");
+                  document.body.classList.add("wf-active")
+                }).catch(function(error){
+                  console.log(error.message)
+                })
+              sessionStorage.foutFontsLoaded = true;
       } catch (e) {} })();
             `,
             }}

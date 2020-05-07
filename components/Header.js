@@ -12,7 +12,6 @@ Router.events.on('routeChangeError', () => progressMethods.done());
 
 const Header = ({ onThemeHandler }) => {
   const color = useContext(ThemeContext);
-
   const onclickHandler = () => {
     onThemeHandler();
   };
@@ -66,14 +65,9 @@ const Header = ({ onThemeHandler }) => {
       </div>
       <div className="logoWrapper">
         <Link href="/">
-          <a href="/">
-            <img
-              className="logo"
-              src={`/images/${
-                bgColor === '#222831' ? 'logo-white' : 'logo'
-              }.png`}
-              alt="logo"
-            />
+          <a href="/" className="logoLink">
+            <img className="logo" src="/images/logo.png" alt="logo" />
+            <h4>Gotcha</h4>
           </a>
         </Link>
       </div>
@@ -116,8 +110,15 @@ const Header = ({ onThemeHandler }) => {
           border: none;
         }
         .logo {
-          max-width: 200px;
+          max-width: 5em;
           width: 100%;
+        }
+        .logoLink {
+          display: flex;
+          align-items: flex-end;
+        }
+        h4 {
+          margin-bottom: 0;
         }
       `}</style>
     </>
