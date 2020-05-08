@@ -34,8 +34,9 @@ export default class extends Document {
               __html: `
             (function() { try {
           var mode = localStorage.getItem('theme');
-          if (!mode) return;
+          if(mode){
           document.body.className=mode;
+          }
           document.body.className += " wf-inactive";
                 if(sessionStorage.foutFontsLoaded){
                   document.body.classList.remove("wf-inactive");
