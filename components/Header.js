@@ -1,14 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
 import Router from 'next/router';
-import { Progress, progressMethods } from './Progress';
+import progressMethods from './Progress';
 import ThemeContext from './ThemeContext';
 import propTypes from 'prop-types';
-import { GitHub, Facebook, Twitter } from './svg';
-Router.events.on('routeChangeStart', () => progressMethods.start());
-Router.events.on('routeChangeComplete', () => progressMethods.done());
-Router.events.on('routeChangeError', () => progressMethods.done());
+import { GitHub, Twitter } from './svg';
 
 const Header = ({ onThemeHandler }) => {
   const color = useContext(ThemeContext);
@@ -16,11 +13,16 @@ const Header = ({ onThemeHandler }) => {
     onThemeHandler();
   };
   const bgColor = color.background;
-
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => setIsVisible(true), [isVisible, setIsVisible]);
+  useEffect(() => {
+    Router.events.on('routeChangeStart', () => progressMethods.start());
+    Router.events.on('routeChangeComplete', () => progressMethods.done());
+    Router.events.on('routeChangeError', () => progressMethods.done());
+  });
   return (
     <>
       <div className="header">
-        <Progress />
         <Container>
           <Row>
             <Col md={6} sm={6} xs={6}>
@@ -33,14 +35,6 @@ const Header = ({ onThemeHandler }) => {
               </a>
 
               <a
-                href="https://wwww.facebook.com/ian.banda.9085"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Facebook />
-              </a>
-
-              <a
                 href="https://twitter.com/banda_ian"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -50,14 +44,16 @@ const Header = ({ onThemeHandler }) => {
             </Col>
             <Col md={6} sm={6} xs={6}>
               <div className="switchWrapper">
-                <button onClick={onclickHandler} className="switch">
-                  <img
-                    src={`/images/${
-                      bgColor === '#222831' ? 'sun' : 'night'
-                    }.svg`}
-                    alt="sun"
-                  />
-                </button>
+                {isVisible && (
+                  <button onClick={onclickHandler} className="switch">
+                    <img
+                      src={`/images/${
+                        bgColor === '#263238' ? 'sun' : 'moon-phase'
+                      }.svg`}
+                      alt="sun"
+                    />
+                  </button>
+                )}
               </div>
             </Col>
           </Row>
@@ -116,6 +112,7 @@ const Header = ({ onThemeHandler }) => {
         .logoLink {
           display: flex;
           align-items: flex-end;
+          text-decoration: none;
         }
         h4 {
           margin-bottom: 0;

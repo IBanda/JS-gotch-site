@@ -19,7 +19,9 @@ const Post = ({ post, posts, index }) => {
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       )}
-      <PostNavigation posts={posts} index={index} />
+      {posts && posts.length > 1 ? (
+        <PostNavigation posts={posts} index={index} />
+      ) : null}
       <IntroWrapper />
       <style jsx>{`
         .postBody {

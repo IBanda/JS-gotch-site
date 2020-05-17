@@ -5,12 +5,11 @@ const IntroWrapper = () => {
       <div className="introWrapper">
         <div>
           <p className="intro">
-            A personal blog by{' '}
+            A blog by{' '}
             <a href="https://twitter.com/banda_ian" className="myName">
               Ian Banda
             </a>
           </p>
-          <p>I share what I learn</p>
         </div>
       </div>
       <style jsx>
@@ -26,7 +25,7 @@ const IntroWrapper = () => {
             border-radius: 50%;
           }
           .intro {
-            margin: 0;
+            margin-bottom: 1em;
           }
           .myName {
             font-size: 1em;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Header from './Header';
+import AttributeFooter from './AttributeFooter';
 import { Container } from 'react-bootstrap';
 import propTypes from 'prop-types';
 const Layout = ({ themeHandler, children }) => {
@@ -9,6 +10,10 @@ const Layout = ({ themeHandler, children }) => {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&display=swap"
+          rel="stylesheet"
+        ></link>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -31,7 +36,11 @@ const Layout = ({ themeHandler, children }) => {
         <title>JS Gotcha</title>
       </Head>
       <Header onThemeHandler={themeHandler} />
-      <Container>{children}</Container>
+      <Container>
+        {children}
+        <AttributeFooter />
+      </Container>
+
       <style global jsx>{`
         * {
           box-sizing: border-box;
@@ -59,34 +68,37 @@ const Layout = ({ themeHandler, children }) => {
           font-style: normal;
         }
         body {
-          font-family: Verdana, Geneva, sans-serif;
+          font-family: Georgia, serif;
           font-size: 1em;
           font-weight: 400;
           line-height: 1.25;
-          letter-spacing: 1px;
+
           transition: background-color 0.5s linear;
           position: relative;
         }
         body.wf-active {
-          font-family: gilroymedium, Verdana, Geneva, sans-serif;
+          font-family: Lora, Georgia, serif;
         }
         body.wf-active h1,
         body.wf-active h2,
         body.wf-active h3,
         body.wf-active h4,
         body.wf-active h5 {
-          font-family: gilroybold, Verdana, Geneva, sans-serif;
+          font-family: Lora, Georgia, serif;
+          font-weight: 700;
         }
         body.wf-inactive h1,
         body.wf-inactive h2,
         body.wf-inactive h3,
         body.wf-inactive h4,
         body.wf-inactive h5 {
-          font-family: Verdana, Geneva, sans-serif;
+          font-family: Georgia, serif;
+          font-weight: 700;
         }
 
         body.wf-inactive {
-          font-family: Verdana, Geneva, sans-serif;
+          font-family: Georgia, serif;
+          font-weight: 500;
         }
 
         svg.icon,
@@ -104,7 +116,7 @@ const Layout = ({ themeHandler, children }) => {
           color: #f7e032 !important;
         }
         .dark {
-          background-color: #222831;
+          background-color: #263238;
         }
         .dark svg.icon {
           fill: #f7e032;
@@ -225,9 +237,9 @@ const Layout = ({ themeHandler, children }) => {
 
         @media only screen and (min-width: 81.25em) {
           body {
-            font-size: 1em;
+            font-size: 1.2rem;
 
-            line-height: 1.375;
+            line-height: 1.75;
           }
           h1,
           h2,

@@ -2,7 +2,7 @@
 import GhostContentAPI from '@tryghost/content-api';
 
 const api = new GhostContentAPI({
-  url: 'https://jsgotcha.dev',
+  url: 'http://159.203.123.13',
   key: '02586fd50c1a9072970aaf8592',
   version: 'v3',
 });

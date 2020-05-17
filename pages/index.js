@@ -9,13 +9,13 @@ const Index = ({ posts }) => {
     <ThemeWrapper>
       <IntroWrapper />
       <div className="main">
-        <ul className="postList">
+        <ol className="postList">
           <li className="postItem">
             <Row>
               {posts && posts.map((post) => <Post key={post.id} post={post} />)}
             </Row>
           </li>
-        </ul>
+        </ol>
       </div>
       <style jsx>{`
         #nprogress .bar {
@@ -23,7 +23,6 @@ const Index = ({ posts }) => {
         }
         #nprogress .peg {
         }
-
         .main {
           padding: 5% 0;
         }
