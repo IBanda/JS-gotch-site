@@ -44,10 +44,8 @@ export default class extends Document {
                   return
                 }
 
-                var normal = new FontFaceObserver('gilroymedium')
-                var bold= new FontFaceObserver('gilroybold')
-
-                Promise.all([normal.load(),bold.load()]).then(function(){
+                var normal = new FontFaceObserver('Lora')
+                Promise.all([normal.load()]).then(function(){
                   document.body.classList.remove("wf-inactive");
                   document.body.classList.add("wf-active")
                 }).catch(function(error){

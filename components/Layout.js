@@ -100,7 +100,18 @@ const Layout = ({ themeHandler, children }) => {
           font-family: Georgia, serif;
           font-weight: 500;
         }
-
+        .code-block {
+          background-color: #333;
+          width: 100%;
+          padding: 1em;
+        }
+        .quote-block {
+          padding: 0.2em 1em;
+          border-left: 2px solid #f7e032;
+        }
+        pre {
+          color: #fff;
+        }
         svg.icon,
         svg.arrow {
           width: 1em;
