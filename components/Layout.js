@@ -104,10 +104,12 @@ const Layout = ({ themeHandler, children }) => {
           background-color: #333;
           width: 100%;
           padding: 1em;
+          margin:1em 0;
         }
         .quote-block {
           padding: 0.2em 1em;
           border-left: 2px solid #f7e032;
+          margin:1em 0;
         }
         pre {
           color: #fff;
